@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hacklahoma</title>
+        <link rel='stylesheet prefetch' href='http0:00maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+        <link rel="stylesheet" href="css/style.css">
+        <br>
+        <h1>PROJ_NAME</h1>
+    </head>
+    <body style="background-color: #ff564c;">
+        <!-- PRESS THE MENU BUTTON TO TRIGGER ANIMATION -->
+        <!-- PRESS PLAY BUTTON TO LISTEN THE DEMO SONG -->
+        <!-- As seen o0:00http0:00dribbble.com/shots/2144866-Day-5-Music-Player-Rebound/" -->
+        <!-- THANK YOU! -->
+        <article class="screen">
+            <input type="checkbox" value="None" id="magicButton" name="check" />
+            <label class="main" for="magicButton"></label>
+            <div class="coverImage"></div>
+            <br>
+            <table class="icons" style="float: right;">
+			  <tr>
+			    <th class=""><a href="" class="icon fa-spotify"><span class="label">Spotify</span></a></th>
+			    <th class=""><a href="" class="icon fa-google-play"><span class="label">Google Play Music</span></a></th>
+			  </tr>
+			</table>
+            <!-- <div class="search"></div> -->
+            <!-- <div class="box" style="float: right;">
+			  <div class="container-4">
+			    <input type="search" id="search" placeholder="Search" />
+			    <button class="icon"><i class="fa fa-search"></i></button>
+			  </div>
+			</div> -->
+			<form>
+				<input type="search" placeholder="Search" style="float: right;" onclick="doSearch(this.form.Query);">
+				<!-- <button type="submit">Send your message</button> -->
+			</form>
+            <!-- <input class="search" type="search" id="mySearch" placeholder="Search for music" style="float: right;"> -->
+            <div class="bodyPlayer"></div>
+            <table class="list">
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox" checked /><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"checked /><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+                <tr class="song">
+                    <td class="nr">
+                       <h5>SONG_NUM</h5>
+                    </td>
+                    <td class="title">
+                        <h6>SONG_NAME</h6>
+                    </td>
+                    <td class="length">
+                        <h5>0:00<h5>
+                    </td>
+                    <td><input type="checkbox"/><label></label></td>
+                </tr>
+            </table>
+            <div class="shadow"></div>
+            <div class="bar"></div>
+            <div class="info">
+                <h4>[CURRENT_SONG]</h4>
+                <h3>[ARTIST_NAME] - [SONG_NAME]</h3>
+            </div>
+            <audio preload="auto" id="audio" controls>
+                <source src="htt0:00www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3">
+                <source src="htt0:00www.jplayer.org/audio/mp3/Miaow-02-Hidden.ogg">
+            </audio>
+            <table class="player">
+                <td><input type="checkbox" id="backward"/><label class="backward" for="backward"></label></td>
+                <td><input type="checkbox" id="play" title="Play" onclick="togglePlayPause()"/><label class="play" for="play"></label></td>
+                <td><input type="checkbox" id="forward"/><label class="forward" for="forward"></label></td>
+            </table>
+            <!-- 				<table class="footer">
+                <td><input type="checkbox" id="love" checked /><label class="love" for="love"></label></td>
+                <td><input type="checkbox" id="shuffle"/><label class="shuffle" for="shuffle"></label></td>
+                <td><input type="checkbox" id="repeat" checked /><label class="repeat" for="repeat"></label></td>
+                <td><input type="checkbox" id="options"/><label class="options" for="options"></label></td>
+                </table> -->
+            <div class="current">
+                <h2></h2>
+            </div>
+        </article>
+        <script src='htt0:00cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
