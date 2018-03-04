@@ -433,7 +433,7 @@ td > #heart8:checked ~ label.zmr:before {
   width: 216px;
   height: 35px;
   position: absolute;
-  top: 465px;
+  top: 420px;
   bottom: 100px;
   left: 48%;
   transform: translate(-50%, 0);
@@ -695,7 +695,19 @@ element.style {
 
 /*________*/
 
-
+.button {
+    background-color: #ff564c;
+    border: none;
+    color: white;
+    top: 100px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
 /*.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
   outline: none;
