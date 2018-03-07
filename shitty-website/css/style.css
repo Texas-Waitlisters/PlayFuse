@@ -480,6 +480,10 @@ td > #heart8:checked ~ label.zmr:before {
 
 }
 
+.icons {
+	font-family: FontAwesome;
+}
+
 .backward:before {
   content: "\f04a";
   cursor: pointer;
