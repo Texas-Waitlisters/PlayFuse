@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Hacklahoma</title>
+        <title>PlayFuse</title>
         <!-- <link rel='stylesheet prefetch' href='http://music.waitlisters.org/css/fontawesome-all.min.css'> -->
         <link rel='stylesheet prefetch' href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
         <br><br>
-        <h1>PROJ_NAME</h1>
+        <h1>PlayFuse</h1>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body style="background-color: #ff564c;">
@@ -34,9 +34,9 @@
 			    <button class="icon"><i class="fa fa-search"></i></button>
 			  </div>
 			</div> -->
-			<form>
-				<input type="search" placeholder="Search" style="float: right;" onclick="doSearch(this.form.Query);">
-				<!-- <button type="submit">Send your message</button> -->
+			<form id="search_form">
+				<button type="submit" style="float: right">Send your message</button>
+				<input type="search" style="float: right;" id="search_bar">
 			</form>
 			<input type="button" id="get_playlists" class="button" style="float: right;" value="Get Playlists">
 			
@@ -47,25 +47,64 @@
 			  <div class="modal-content">
 				<span class="close">&times;</span>
 				<p>Enter platform credentials</p>
-				<form>
-					Username: <input type="text" name="username">
+				<form id="login_form">
+					Username: <input type="text" name="username" id="username">
 					<br>
-					Password: <input type="text" name="password">
+					Password: <input type="text" name="password" id="password">
 					<br>
 					<br>
-					<input type="radio" name="platform" value="spotify"> Spotify<br>
-					<input type="radio" name="platform" value="google play"> Google Play<br>
+					<input type="radio" id="spotify" name="platform1" class="platformbtn" value="spotify"> Spotify<br>
+					<input type="radio" id="google play" name="platform1" class="platformbtn" value="google music"> Google Play<br>
 					<br>
-					<input type="submit" name="submit">
+					<input type="submit" name="submit" id="submit">
 				</form>
 			  </div>
 
 			</div>
 			
+			
+			
             <input type="button" id="load_songs" class="button" style="float: right;" value="Load Songs">
+			
+			<input type="button" id="login" class="button" style="float: right;" value="Login">	
+			
+			<!-- The Modal -->
+			<div id="myModal2" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Select Platform</p>
+				<form id="playlist_form">
+					<input type="radio" id="spotify" name="platform2" class="platformbtn" value="spotify"> Spotify<br>	
+					<input type="radio" id="google play" name="platform2" class="platformbtn" value="google music"> Google Play<br>
+					<br>
+					<input type="submit" name="submit" id="submit">
+				</form>
+			  </div>
+
+			</div>
+			
+			<div id="myModal3" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Enter info</p>
+				<form id="loadsong_form">
+					Playlist Name: <input type="text" name="playlist" id="playlist">
+					<br>
+					<input type="radio" id="spotify" name="platform3" class="platformbtn" value="spotify"> Spotify<br>	
+					<input type="radio" id="google play" name="platform3" class="platformbtn" value="google music"> Google Play<br>
+					<br>
+					<input type="submit" name="submit" id="submit">
+				</form>
+			  </div>
+
+			</div>
             <!-- <input class="search" type="search" id="mySearch" placeholder="Search for music" style="float: right;"> -->
             <div class="bodyPlayer"></div>
-            <table class="list">
+            <table class="list" id="song_list">
 				<!--
                 <tr class="song">
                     <td class="nr">
@@ -179,7 +218,7 @@
             </table>
             <div class="shadow"></div>
             <div class="bar"></div>
-            <div class="info">
+            <div class="info" id="playlist-info">
                 <h4>[CURRENT_SONG]</h4>
                 <h3>[ARTIST_NAME] - [SONG_NAME]</h3>
             </div>
@@ -203,6 +242,6 @@
                 <h2></h2>
             </div>
         </article>
-        <script src="js/index.js"></script>
+        <script src="{{ url_for('static',filename='js/index.js') }}"></script>
     </body>
 </html>

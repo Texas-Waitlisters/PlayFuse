@@ -185,6 +185,7 @@ label.main:hover:before {
   left: 0;
   transform-origin: 0% 0%;
   transition: all 0.3s ease-in;
+  z-index: -1;
 }
 
 .screen > #magicButton:checked ~ .coverImage {
@@ -253,12 +254,18 @@ label.main:hover:before {
   background: #1d1d1d;
   text-indent: 8px;
 }
-	
+
 .title {
   width: 120px;
   text-alig
   : left;
   text-indent: 15px;
+  transition: all 0.11s ease-in;
+}
+
+.list tr:hover .title {
+  padding-left: 5px;
+  width: 240px;
   transition: all 0.11s ease-in;
 }
 
@@ -696,6 +703,7 @@ element.style {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+	z-index: 0;
 }
 
 /* The Modal (background) */
@@ -734,10 +742,6 @@ element.style {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-a{
-	z-index: 3;
 }
 
 /*.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{

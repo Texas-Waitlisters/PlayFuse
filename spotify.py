@@ -8,23 +8,25 @@ os.environ['SPOTIPY_REDIRECT_URI']='http://localhost/'
 
 username = 'nhuck15';
 
+scope = 'playlist-read-private playlist-modify-private playlist-modify-public'
+
 def search(song):
-    token = util.prompt_for_user_token(username,'playlist-modify-public');
+    token = util.prompt_for_user_token(username,scope);
     sp = spotipy.Spotify(auth=token);
     results = sp.search(song);
-    print results
+    #print results
     vals = [];
     for x in results['tracks']['items']:
         vals.append("%s,%s,%s" % (x['name'],x['artists'][0]['name'],x['album']['name']))
     return vals;
 
 def getPlaylist(name):
-    token = util.prompt_for_user_token(username,'playlist-modify-public');
+    token = util.prompt_for_user_token(username,scope);
     sp = spotipy.Spotify(auth=token);
     playlists = sp.user_playlists(username)
     vals = [];
     for playlist in playlists['items']:
-        print playlist['name']
+        #print playlist['name']
         if playlist['name'] == name:
             results = sp.user_playlist(username, playlist['id'])
             tracks = results['tracks'];
@@ -34,33 +36,33 @@ def getPlaylist(name):
     return vals;
 
 def add(song, name):
-    token = util.prompt_for_user_token(username,'playlist-modify-public');
+    token = util.prompt_for_user_token(username,scope);
     sp = spotipy.Spotify(auth=token);
     results = sp.search(song);
     playlists = sp.user_playlists(username)
     songID = results['tracks']['items'][0]['id']
     playlistID = None;
     for playlist in playlists['items']:
-        print playlist['name']
+        #print playlist['name']
         if playlist['name'] == name:
             playlistID = playlist['id'];
     sp.user_playlist_add_tracks(username, playlistID, [songID]);
 
 def remove(song, name):
-    token = util.prompt_for_user_token(username,'playlist-modify-public');
+    token = util.prompt_for_user_token(username,scope);
     sp = spotipy.Spotify(auth=token);
     results = sp.search(song);
     playlists = sp.user_playlists(username)
     songID = results['tracks']['items'][0]['id']
     playlistID = None;
     for playlist in playlists['items']:
-        print playlist['name']
+        #print playlist['name']
         if playlist['name'] == name:
             playlistID = playlist['id'];
     sp.user_playlist_remove_all_occurrences_of_tracks(username, playlistID, [songID]);
 
 def getAllPlaylists():
-    token = util.prompt_for_user_token(username,'playlist-modify-public');
+    token = util.prompt_for_user_token(username,scope);
     sp = spotipy.Spotify(auth=token);
     playlists = sp.user_playlists(username)
     vals = [];
@@ -68,4 +70,5 @@ def getAllPlaylists():
         vals.append(playlist['name'])
     return vals;
 
-print remove('breaking the girl', 'etc')
+#print(getAllPlaylists())
+#remove('breaking the girl', 'etc')

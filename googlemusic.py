@@ -59,14 +59,12 @@ def remove(song_name, playlist_name):
                     break
     api.remove_entries_from_playlist(id);
 
-def main():
+def setup(username, password):
     global api
     api = Mobileclient()
-    api.logout()
-    logged_in = api.login('email@gmail.com', 'pass', Mobileclient.FROM_MAC_ADDRESS)
+    logged_in = api.login(username, password, Mobileclient.FROM_MAC_ADDRESS)
     while(not logged_in):
-        logged_in = api.login('email@gmail.com', 'pass', Mobileclient.FROM_MAC_ADDRESS)
-    return api;
+        logged_in = api.login(username, password, Mobileclient.FROM_MAC_ADDRESS)
 
-api = main()
-api.logout()
+#api = main()
+#api.logout()
